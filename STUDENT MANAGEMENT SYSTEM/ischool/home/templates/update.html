@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{%block body %}
+
+<div class="container mt-5">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Update Student</h2>
+        <hr>
+        <div class="mb-3 ">
+          <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input type="text" class="form-control" name="first_name" value="{{student.first_name}}">
+          
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">Last name</label>
+            <input type="text" class="form-control" name="last_name"value="{{student.last_name}}" >
+            
+          </div>
+          <div class="mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" value="{{student.email}}">
+            
+          </div>
+          <div class="mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">Contact number</label>
+            <input type="Number" class="form-control" name="phone" value="{{student.phone}}">
+            
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Address</label>
+          <textarea class="form-control" name="address"value="">{{student.address}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">About</label>
+            <textarea class="form-control" name="about">{{student.about}}</textarea>
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Student Image</label>
+            <input type="file" class="form-control" name="student_image">
+          </div>
+       
+        <button type="submit" class="btn btn-success">Update Student</button>
+      </form>
+      
+
+
+      
+          
+        
+          
+        
+      </table>
+</div>
+
+{%endblock%}
